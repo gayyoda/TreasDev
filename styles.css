@@ -40,3 +40,18 @@ footer .copyright{
 .slogan{
   text-align: center;
 }
+.card{
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 500px;
+  text-align: left;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border radius: 6px;
+}
+.flex{
+  display: flex;
+  max-width: 1200px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
