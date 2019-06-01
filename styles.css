@@ -17,6 +17,7 @@
 .logo-banner{
   height: 150px;
   width: 100%;
+  object-fit: fill;
 }
 footer{
   width: 100%;
@@ -33,13 +34,13 @@ footer{
   text-align: center;
 }
 .card{
-  margin: 30px;
-  padding: 20px 40px 40px;
-  max-width: 500px;
+  float: left;
+  width: 60%;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #ccc;
   border radius: 6px;
+  height: 50%;
 }
 .flex{
   display: flex;
@@ -64,4 +65,24 @@ section{
   max-width: 500px;
   width: 100%;
 }
-
+.about{
+  width: 40%;
+  height: 50%
+  text-align: right;
+  float: left;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border radius: 6px;
+  margin-top: 0;
+}
+.update{
+  width: 100%;
+  text-align: right;
+  float: right;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border radius: 6px;
+  margin-botton: 0;
+  height: 50%;
+  display: inline-block;
+}
