@@ -32,9 +32,6 @@ footer{
 .con-info{
   text-align: center;
 }
-.slogan{
-  text-align: center;
-}
 .card{
   margin: 30px;
   padding: 20px 40px 40px;
@@ -58,3 +55,9 @@ section{
   float:left;
   width: 70%
 }
+.profilepic{
+  transform: scale(0.5);
+  padding:0;
+  margin: 0;
+}
+
