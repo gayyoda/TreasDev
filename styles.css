@@ -78,11 +78,19 @@ section{
 .update{
   width: 100%;
   text-align: right;
-  float: right;
-  background: #fff;
-  border-bottom: 4px solid #ccc;
-  border radius: 6px;
-  margin-botton: 0;
-  height: 50%;
-  display: inline-block;
+  margin-botton:0;
+  object-fit: fill;
+}
+.nav{
+  background-color: darkblue;
+  color: lightblue;
+}
+.nav-link:link{
+  color: lightblue;
+}
+.nav-link:visited{
+  color: lightblue;
+}
+#phys{
+  text-align: center;
 }
