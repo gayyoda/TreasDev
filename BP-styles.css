@@ -39,5 +39,6 @@ footer{
   color: lightblue;
 }
 .BP-header{
-  text-align: center
+  text-align: center;
+  width: 100%;
 }
