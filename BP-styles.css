@@ -42,3 +42,15 @@ footer{
   text-align: center;
   width: 100%;
 }
+.t1{
+  float: left;
+  width: 50%;
+  background-color: red;
+  text-align: center;
+}
+.t2{
+  float: right;
+  width: 50%;
+  background-color: blue;
+  text-align: center;
+}

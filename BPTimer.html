@@ -19,14 +19,37 @@
     <header>
       <img src="Logo/prideflag.jpg" alt = "Logo Banner" class= "logo-banner">
       <hr>
+      <h1 class = BP-header>Bludger Possession Timer</h1>
+      <script>
+        //dim vars and functions
+        var team1Name = prompt("Enter Team #1 name");
+        var team2Name = prompt("Enter Team #2 name");
+        var t1time = 0;
+        var t2time = 0;
+        function counter1(){
+          document.getElementById("team1time").innerHTML = ++ t1time + " s";
+        }
+        function counter2(){
+          document.getElementById("team2time").innerHTML = ++ t2time + " s";
+        }
+        document.write('<h3 class="t1">'+team1Name+'</h3>');
+        document.write('<h3 class="t2">'+team2Name+'</h3>');
+        //Team 1 timer function
+      </script>
     </header>
     <main>
 
-    <script>
-      //Heading
-      document.write('<h1 class="BP-header">Bludger Possesion Timer</h1>');
-      document.write('<h5 class = "BP-header">&copy 2019, Alex Healey</h5>');
-    </script>
+    <!-- Team 1 -->
+      <div class = "t1">
+        <!-- timer team 1 -->
+        <p id = "team1time" class="t1"> </p>
+        <button onClick = "T1Timer = setInterval(counter1, 1000); clearInterval(counter2)">Possession</button>
+      </div>
+    <!-- Team 2 -->
+      <div class = "t2">
+        <p id = "team2time" class = "t2"> </p>
+        <button onClick = "T2Timer = setInterval(counter2, 1000); clearInterval(counter1)">Possession</button>
+      </div>
     </main>
 
     <footer>
