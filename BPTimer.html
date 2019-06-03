@@ -23,9 +23,20 @@
       <script>
         //dim vars and functions
         var team1Name = prompt("Enter Team #1 name");
+        if (team1Name == null){
+          team1Name = "Team 1";
+        }
         var team2Name = prompt("Enter Team #2 name");
+        if (team2name == null){
+          team2name = 'Team 2';
+        }
         var t1time = 0;
         var t2time = 0;
+        var T1Timer = 0;
+        var T2Timer = 0;
+        var total = 0;
+        var t1av = 0;
+        var t2av = ((T2Timer/60)/total) * 100;
         function counter1(){
           document.getElementById("team1time").innerHTML = ++ t1time + " s";
         }
@@ -43,13 +54,26 @@
       <div class = "t1">
         <!-- timer team 1 -->
         <p id = "team1time" class="t1"> </p>
-        <button onClick = "T1Timer = setInterval(counter1, 1000); clearInterval(counter2)">Possession</button>
+        <button onClick ="clearInterval(T2Timer); T1Timer = setInterval(counter1, 1000); ">Possession</button>
       </div>
     <!-- Team 2 -->
       <div class = "t2">
         <p id = "team2time" class = "t2"> </p>
-        <button onClick = "T2Timer = setInterval(counter2, 1000); clearInterval(counter1)">Possession</button>
+        <button onClick = "clearInterval(T1Timer); T2Timer = setInterval(counter2, 1000);">Possession</button>
       </div>
+    <div class="bottom-buttons">
+      <!-- Brooms Down -->
+      <button id = "bd" onClick = "clearInterval(T1Timer); clearInterval(T2Timer);">Brooms down</button>
+      <!-- End Game -->
+      <button id = "endgame" onClick = "clearInterval(T1Timer); clearInterval(T2Timer);
+                                        total = (t1time+t2time)/60;
+                                        t1av = ((t1time/60)/total) * 100;
+                                        t2av = ((t2time/60)/total)*100;
+                                        alert('The game time was ' + total + ' secs \n'
+                                        + team1Name + ' had ' + t1av + ' % bludger control \n'
+                                        + team2Name + ' had ' + t2av + ' % bludger control');">End Game</button>
+    </div>
+
     </main>
 
     <footer>

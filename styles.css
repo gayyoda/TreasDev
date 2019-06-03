@@ -1,3 +1,7 @@
+
+*{
+  font: console;
+}
 .main-nav{
   width: = 100%;
   background: = blue;
@@ -80,6 +84,7 @@ section{
   text-align: right;
   margin-botton:0;
   object-fit: fill;
+  position: fixed
 }
 .nav{
   background-color: darkblue;

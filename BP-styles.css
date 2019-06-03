@@ -54,3 +54,19 @@ footer{
   background-color: blue;
   text-align: center;
 }
+#bottom{
+  width = 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+#bd{
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+#endgame{
+  float: right;
+  text-align: center;
+  width: 50%;
+}
