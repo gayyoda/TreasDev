@@ -1,0 +1,43 @@
+.main-nav{
+  width: = 100%;
+  background: = blue;
+  min-height: 30px;
+  padding: 10px
+  position: fixed;
+  text-align: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  background-color: darkblue;
+  color: lightblue;
+}
+.logo-banner{
+  height: 150px;
+  width: 100%;
+  object-fit: fill;
+}
+footer{
+  width: 100%;
+  clear: both;
+  margin-botton: 0;
+}
+.t-social{
+  text-align: center;
+}
+.copyright{
+  text-align: center;
+}
+.nav-link:link{
+  color: lightblue;
+}
+.nav-link:visited{
+  color: lightblue;
+}
+.BP-header{
+  text-align: center
+}
