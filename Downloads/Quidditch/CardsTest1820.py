@@ -1,6 +1,9 @@
+#imports
 import random
-#repeat procedure offenses
-off= ["Sub violation \n",#0
+import sys
+#Offences
+off= [#repeat procedure offences
+      "Sub violation \n",#0
       "Knockout procedure violation \n", #1
       #back to hoops offenses
       "Illegally failing to replace a lost headband \n", #2
@@ -129,91 +132,107 @@ off= ["Sub violation \n",#0
 question = random.sample(range(0,len(off)),len(off))
 score = 0
 n = 0
-#print instructions
-print("Penalties quiz for IQA rulebook 2018 - 2020 V1.5")
-print("(c) Alex Healey, 2019")
-print("IQA Rule Book - http://iqasport.org/wp-content/uploads/2019/02/IQA-Rulebook-2018-20.pdf")
-print("Repeat procedure = repeat")
-print("Back to hoops = bth")
-print("Turnover of possesion = turnover")
-print("Blue Card = blue")
-print("Yellow Card = yellow")
-print("Red Card = red")
-print("Player is Ejected = ejection")
-print("Standard contact penalty = scp")
-print("Back To Hoops and Double bludger turnover = bth and double bludger turnover")
-print("Quaffle turnover = qt")
+#display score function
+def dis_score(correct, total):
+    print("\n")
+    print("Quiz Stopped")
+    print("Your final score is " + str(correct) + "/" + str(total))
+    print("Press Enter to exit")
+    input()
+#intro
+print("###########################################################################################")
+print("# Penalties quiz for IQA rulebook 2018 - 2020 V1.6                                        #")
+print("# (c) Alex Healey, TreasDev, 2019                                                         #")
+print("# IQA Rule Book - http://iqasport.org/wp-content/uploads/2019/02/IQA-Rulebook-2018-20.pdf #")
+print("# Repeat procedure = repeat                                                               #")
+print("# Back to hoops = bth                                                                     #")
+print("# Turnover of possesion = turnover                                                        #")
+print("# Blue Card = blue                                                                        #")
+print("# Yellow Card = yellow                                                                    #")
+print("# Red Card = red                                                                          #")
+print("# Player is Ejected = ejection                                                            #")
+print("# Standard contact penalty = scp                                                          #")
+print("# Back To Hoops and Double bludger turnover = bth and double bludger turnover             #")
+print("# Quaffle turnover = qt                                                                   #")
+print("# Exit = endgame                                                                          #")
+print("###########################################################################################")
+print("\n")
 for num in question:
     answer = input(off[num])
-    if 0 <= num <= 1: 
-        n +=1
-        if answer.lower() == "repeat":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, you must make the player repeat the procedure \nYour score is " + str(score) + "/" + str(n) + "\n")
-    if 2 <= num <= 11:
-        n +=1
-        if answer.lower() == "bth":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, you must send the player back to their hoops \nYour score is " + str(score) + "/" + str(n) + "\n")
-    if 12 <= num <= 14:
-        n +=1
-        if answer.lower() == "turnover":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, there must be a turnover of possession to the other team \nYour score is " + str(score)  + "/" + str(n) + "\n")
-    if 15 <= num <= 51:
-        n +=1
-        if answer.lower() == "blue":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else: 
-            print("Incorrect, a blue card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
-    if 52 <= num <= 75:
-        n +=1
-        if answer.lower() == "yellow":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, a yellow card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
-    if 76 <= num <= 97:
-        n +=1
-        if answer.lower() == "red":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, a red card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
-    if 98 <= num <= 101:
-        n +=1
-        if answer.lower() == "ejection":
+    if answer.lower() == 'endgame' and n != 0:
+        dis_score(score, n)
+        break
+    elif answer.lower() == 'endgame' and n == 0:
+        sys.exit()
+    else:
+        if 0 <= num <= 1: 
             n +=1
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, the player must be ejected \nYour score is " + str(score) +"/" + str(n) + "\n")
-    if 102<= num <= 114:
-        n +=1
-        if answer.lower() == "scp":
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, standard contact penalty is applied \nYour score is " + str(score)  +"/" + str(n) + "\n")
-    if num == 115:
-        if answer.lower() == "bth and double bludger turnover":
+            if answer.lower() == "repeat":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, you must make the player repeat the procedure \nYour score is " + str(score) + "/" + str(n) + "\n")
+        if 2 <= num <= 11:
             n +=1
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, the player is sent back to hoops and there is a double bludger turnover\nYour score is " + str(score) + "/" + str(n) + "\n")
-    if num == 116:
-        if answer.lower() == "blue and qt":
+            if answer.lower() == "bth":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, you must send the player back to their hoops \nYour score is " + str(score) + "/" + str(n) + "\n")
+        if 12 <= num <= 14:
             n +=1
-            score +=1
-            print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
-        else:
-            print("Incorrect, a blue card is issued and the quaffle is turned over \nYour score is " + str(score) + "/" + str(n) + "\n")
-input()
+            if answer.lower() == "turnover":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, there must be a turnover of possession to the other team \nYour score is " + str(score)  + "/" + str(n) + "\n")
+        if 15 <= num <= 51:
+            n +=1
+            if answer.lower() == "blue":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else: 
+                print("Incorrect, a blue card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
+        if 52 <= num <= 75:
+            n +=1
+            if answer.lower() == "yellow":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, a yellow card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
+        if 76 <= num <= 97:
+            n +=1
+            if answer.lower() == "red":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, a red card must be issued \nYour score is " + str(score) + "/" + str(n) + "\n")
+        if 98 <= num <= 101:
+            n +=1
+            if answer.lower() == "ejection":
+                n +=1
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, the player must be ejected \nYour score is " + str(score) +"/" + str(n) + "\n")
+        if 102<= num <= 114:
+            n +=1
+            if answer.lower() == "scp":
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, standard contact penalty is applied \nYour score is " + str(score)  +"/" + str(n) + "\n")
+        if num == 115:
+            if answer.lower() == "bth and double bludger turnover":
+                n +=1
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, the player is sent back to hoops and there is a double bludger turnover\nYour score is " + str(score) + "/" + str(n) + "\n")
+        if num == 116:
+            if answer.lower() == "blue and qt":
+                n +=1
+                score +=1
+                print("Correct \nYour score is " + str(score) + "/" + str(n) + "\n")
+            else:
+                print("Incorrect, a blue card is issued and the quaffle is turned over \nYour score is " + str(score) + "/" + str(n) + "\n")

@@ -1,0 +1,72 @@
+.main-nav{
+  width: = 100%;
+  background: = blue;
+  min-height: 30px;
+  padding: 10px
+  position: fixed;
+  text-align: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  background-color: darkblue;
+  color: lightblue;
+}
+.logo-banner{
+  height: 150px;
+  width: 100%;
+  object-fit: fill;
+}
+footer{
+  width: 100%;
+  clear: both;
+  margin-botton: 0;
+}
+.t-social{
+  text-align: center;
+}
+.copyright{
+  text-align: center;
+}
+.nav-link:link{
+  color: lightblue;
+}
+.nav-link:visited{
+  color: lightblue;
+}
+.BP-header{
+  text-align: center;
+  width: 100%;
+}
+.t1{
+  float: left;
+  width: 50%;
+  background-color: red;
+  text-align: center;
+}
+.t2{
+  float: right;
+  width: 50%;
+  background-color: blue;
+  text-align: center;
+}
+#bottom{
+  width = 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+#bd{
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+#endgame{
+  float: right;
+  text-align: center;
+  width: 50%;
+}
