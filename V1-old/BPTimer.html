@@ -3,23 +3,12 @@
   <head>
     <title>Treas Dev</title>
     <link rel="stylesheet" href="BP-styles.css">
-    <link rel="icon" href="BP-icon.png">
+    <!--<link rel="icon" href="BP-icon.png">-->
   </head>
   <body>
-    <div class="main-nav">
-      <ul class="nav">
-        <li class = "home-nav"><a href="index.html" class="nav-link">Home</a></li>
-        <li class = "games-nav"><a href="Games.html" class = "nav-link">Games</a></li>
-        <li class = "phys-nav"><a href="Physics.html" class = "nav-link">Physics</a></li>
-        <li class = "quidd-nav"><a href="Quidd.html" class = "nav-link">Quidditch</a></li>
-        <li class = "autism-nav"><a href = "Autism.html" class = "nav-link">Autism Apps</a></li>
-        <li class = "contact-nav"><a href="contact.html" class = "nav-link">Contact</a></li>
-      </ul>
-    </div>
     <header>
-      <img src="Logo/prideflag.jpg" alt = "Logo Banner" class= "logo-banner">
+      <h1 class = BP-header>QuidTimeApp</h1>
       <hr>
-      <h1 class = BP-header>Bludger Possession Timer</h1>
       <script>
         //dim vars and functions
         var team1Name = prompt("Enter Team #1 name");
@@ -31,49 +20,180 @@
         var total = 0;
         var t1av = 0;
         var t2av = ((T2Timer/60)/total) * 100;
+        var gameTime = 0;
+        var gameTimer = 0;
+        var T1scr = 0;
+        var T2scr = 0;
+        var min1 = 0;
+        var min2 = 0;
+        var min = 0;
+        var s1 = false;
+        var s2 = false;
         function counter1(){
-          document.getElementById("team1time").innerHTML = ++ t1time + " s";
+          ++t1time
+          if (t1time % 60 == 0){
+            ++min1
+          }
+          if (t1time % 60 < 10){
+            document.getElementById("team1time").innerHTML = min1 + ":0" + t1time % 60;
+          }else{
+            document.getElementById("team1time").innerHTML = min1 + ":" + t1time % 60;
+          }
         }
         function counter2(){
-          document.getElementById("team2time").innerHTML = ++ t2time + " s";
+          ++t2time
+          if (t2time % 60 == 0){
+            ++min2
+          }
+          if (t2time % 60 < 10){
+            document.getElementById("team2time").innerHTML = min2 + ":0" + t2time % 60;
+          }else{
+            document.getElementById("team2time").innerHTML = min2 + ":" + t2time % 60;
+          }
         }
-        document.write('<h3 class="t1">'+team1Name+'</h3>');
-        document.write('<h3 class="t2">'+team2Name+'</h3>');
-        //Team 1 timer function
+        function gameCount(){
+          ++gameTime
+          if (gameTime % 60 == 0){
+            ++min
+          }
+          if (gameTime % 60 < 10){
+            document.getElementById("MatchTimer").innerHTML = 'Game Time = ' + min + ":0" + gameTime % 60;
+          }else{
+            document.getElementById("MatchTimer").innerHTML = 'Game Time = ' + min + ":" + gameTime % 60;
+          }
+        }
+        function scoreup1(){
+          T1scr += 10;
+          if(s1 == false){
+            document.getElementById("Team1Score").innerHTML = T1scr;
+          }else{
+            doctype.getElementById("Team1Score").innerHTML = T1scr + '*';
+          }
+        }
+        function scoredown1(){
+          T1scr -= 10;
+          if (s1 == false){
+            document.getElementById("Team1Score").innerHTML = T1scr;
+          }else{
+            document.getElementById("Team1Score").innerHTML = T1scr + '*';
+          }
+        }
+        function scoreup2(){
+          T2scr += 10;
+          if(s2 == false){
+            document.getElementById("Team2Score").innerHTML = T2scr;
+          }else{
+            document.getElementById("Team2Score").innerHTML = T2scr + '*';
+          }
+        }
+        function scoredown2(){
+          T2scr -= 10;
+          if(s2 == false){
+            document.getElementById("Team2Score").innerHTML = T2scr;
+          }else{
+            document.getElementById("Team2Score").innerHTML = T2scr + '*';
+          }
+        }
+        function snitch1(){
+            T1scr += 30;
+            t1av = ((t1time/60)/(gameTime/60)) * 100;
+            t2av = ((t2time/60)/(gameTime/60))*100;
+            if (T1scr != T2scr && s2 == false){
+              alert('The game time was ' + min + ':' + gameTime % 60 + ' mins \n'
+              + team1Name + ' had ' + t1av.toPrecision(2) + ' % bludger control \n'
+              + team2Name + ' had ' + t2av.toPrecision(2) + ' % bludger control \n'
+              + 'The final score was : \n'
+             + T1scr + '* - ' + T2scr);
+            }else if(T1scr == T2scr && s2 == false){
+              s1 = true;
+              document.getElementById("Team1Score").innerHTML = T1scr + '*';
+            }else{
+              alert('The game time was ' + min + ':' + gameTime % 60 + ' mins \n'
+              + team1Name + ' had ' + t1av.toPrecision(2) + ' % bludger control \n'
+              + team2Name + ' had ' + t2av.toPrecision(2) + ' % bludger control \n'
+              + 'The final score was : \n'
+             + T1scr + '°* - ' + T2scr + '*°');
+            }
+          }
+        function snitch2(){
+            T2scr += 30;
+            t1av = ((t1time/60)/(gameTime/60)) * 100;
+            t2av = ((t2time/60)/(gameTime/60))*100;
+            if (T1scr != T2scr && s1 == false){
+              alert('The game time was ' + min + ':' + gameTime % 60 + ' mins \n'
+              + team1Name + ' had ' + t1av.toPrecision(2) + ' % bludger control \n'
+              + team2Name + ' had ' + t2av.toPrecision(2) + ' % bludger control \n'
+              + 'The final score was : \n'
+             + T1scr + ' - ' + T2scr + '*');
+            }else if (T1scr == T2scr){
+              s2 = true;
+              document.getElementById("Team2Score").innerHTML = T2scr + '*';
+            }else{
+              alert('The game time was ' + min + ':' + gameTime % 60 + ' mins \n'
+              + team1Name + ' had ' + t1av.toPrecision(2) + ' % bludger control \n'
+              + team2Name + ' had ' + t2av.toPrecision(2) + ' % bludger control \n'
+              + 'The final score was : \n'
+             + T1scr + '*° - ' + T2scr + '°*');
+            }
+          }
+        document.write('<h3 class="t1Header" styles="width: 50%;">'+team1Name+'</h3>');
+        document.write('<h3 class="t2Header">'+team2Name+'</h3>');
       </script>
     </header>
     <main>
-
+    <div class="container">
     <!-- Team 1 -->
-      <div class = "t1">
+      <div class = "t1" "box">
         <!-- timer team 1 -->
         <p id = "team1time" class="t1"> </p>
-        <button onClick ="clearInterval(T2Timer); T1Timer = setInterval(counter1, 1000); ">Possession</button>
+        <button id = "T1T" onClick ="clearInterval(T2Timer); clearInterval(T1Timer); clearInterval(gameTimer);
+                          T1Timer = setInterval(counter1, 1000);
+                          gameTimer = setInterval(gameCount, 1000);">Possession</button>
       </div>
     <!-- Team 2 -->
-      <div class = "t2">
+      <div class = "t2" "box">
         <p id = "team2time" class = "t2"> </p>
-        <button onClick = "clearInterval(T1Timer); T2Timer = setInterval(counter2, 1000);">Possession</button>
+        <button id="T2T" onClick = "clearInterval(T1Timer); clearInterval(T2Timer); clearInterval(gameTimer);
+                           T2Timer = setInterval(counter2, 1000);
+                           gameTimer = setInterval(gameCount, 1000);">Possession</button>
       </div>
+    <!--T1 score buttons -->
+    <div class = "t1" "box">
+        <button onClick = "scoredown1();">[-10]</button>
+        <p id = "Team1Score"> </p>
+        <button onClick = "scoreup1();">[+10]</button>
+        <button onClick = "snitch1(); clearInterval(T2Timer); clearInterval(T1Timer); clearInterval(gameTimer);">[*]</button>
+    </div>
+    <!--T2 score buttons -->
+    <div class = "t2" "box">
+      <button onClick = "scoredown2();">[-10]</button>
+      <p id = "Team2Score"> </p>
+      <button onClick = "scoreup2();">[+10]</button>
+      <button onClick = "snitch2(); clearInterval(T2Timer); clearInterval(T1Timer); clearInterval(gameTimer);">[*]</button>
+    </div>
+    </div>
+    </div>
+    <!--Match Timer -->
+    <div class = "matchtime">
+      <p id = "MatchTimer"> </p>
+    </div>
     <div class="bottom-buttons">
       <!-- Brooms Down -->
-      <button id = "bd" onClick = "clearInterval(T1Timer); clearInterval(T2Timer);">Brooms down</button>
-      <!-- End Game -->
-      <button id = "endgame" onClick = "clearInterval(T1Timer); clearInterval(T2Timer);
-                                        total = (t1time+t2time)/60;
-                                        t1av = ((t1time/60)/total) * 100;
-                                        t2av = ((t2time/60)/total)*100;
-                                        alert('The game time was ' + total + ' mins \n'
-                                        + team1Name + ' had ' + t1av + ' % bludger control \n'
-                                        + team2Name + ' had ' + t2av + ' % bludger control');">End Game</button>
-    </div>
-
+      <button id = "bd" onClick = "clearInterval(T1Timer); clearInterval(T2Timer); clearInterval(gameTimer);">Brooms down</button>
+      <!-- End Game - useless
+      <button id = "endgame" onClick = "clearInterval(T1Timer); clearInterval(T2Timer); clearInterval(gameTimer);
+                                        t1av = ((t1time/60)/(gameTime/60)) * 100;
+                                        t2av = ((t2time/60)/(gameTime/60))*100;
+                                        alert('The game time was ' + min + ':' + gameTime % 60 + ' mins \n'
+                                        + team1Name + ' had ' + t1av.toPrecision(2) + ' % bludger control \n'
+                                        + team2Name + ' had ' + t2av.toPrecision(2) + ' % bludger control \n'
+                                        + 'The final score was : \n'
+                                        + T1scr + ' - ' + T2scr);">End Game</button> -->
     </main>
-
     <footer>
       <hr>
       <p class="t-social"><a href="https://twitter.com/TreasDev" target="_blank">Twitter</a></p>
-      <p class="copyright">&copy; 2019, Alex Healey</p>
+      <p class="copyright">V1.2, &copy; 2019, Alex Healey</p>
     </footer>
   </body>
 </html>

@@ -1,26 +1,20 @@
-.main-nav{
-  width: = 100%;
-  background: = blue;
-  min-height: 30px;
-  padding: 10px
-  position: fixed;
-  text-align: center;
+.container{
+  margin: auto 0 auto 0;
+  width: 50%;
+  height:200px;
+  background-color:#fff;
+  display:grid;
+  grid-template-columns: 100% 100%;
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
 }
-.nav{
-  display: flex;
-  justify-content: space-around;
-  font-weight: 700;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
-  background-color: darkblue;
-  color: lightblue;
-}
-.logo-banner{
-  height: 150px;
-  width: 100%;
-  object-fit: fill;
-}
+.box{
+    padding:0px;
+    display:grid;
+    align-items:center;
+    font-family:sans-serif;
+    float: left;
+  }
 footer{
   width: 100%;
   clear: both;
@@ -32,25 +26,31 @@ footer{
 .copyright{
   text-align: center;
 }
-.nav-link:link{
-  color: lightblue;
-}
-.nav-link:visited{
-  color: lightblue;
-}
 .BP-header{
   text-align: center;
   width: 100%;
 }
 .t1{
   float: left;
-  width: 50%;
+  width: 100%;
   background-color: red;
   text-align: center;
 }
+.t1Header{
+  float: left;
+  background-color: red;
+  text-align: center;
+  width: 50%
+}
+.t2Header{
+  float: left;
+  background-color: blue;
+  text-align : center;
+  width: 50%;
+}
 .t2{
   float: right;
-  width: 50%;
+  width: 100%;
   background-color: blue;
   text-align: center;
 }
@@ -63,10 +63,17 @@ footer{
 #bd{
   float: left;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 #endgame{
   float: right;
   text-align: center;
   width: 50%;
+}
+.matchtime{
+  width: 100%;
+  text-align: center;
+}
+#T1T{
+  align-items: center;
 }

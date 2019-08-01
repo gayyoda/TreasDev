@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="proper job_data" version="1.3.0" audacityversion="2.3.2" sel0="1.4218052184" sel1="1.4218052184" vpos="0" h="0.0000000000" zoom="84.3997464935" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf57.56.101"/>
+	</tags>
+	<wavetrack name="The_Wurzels_I_Am_A_Cider_Drinker_2007_Official_Video-youtube-lzGkB6YO9Yc-251" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="68247">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808528.au" len="68247" min="-0.580872" max="0.561035" rms="0.078493"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="The_Wurzels_I_Am_A_Cider_Drinker_2007_Official_Video-youtube-lzGkB6YO9Yc-251" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="68247">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808cb3.au" len="68247" min="-0.598785" max="0.61496" rms="0.076983"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
