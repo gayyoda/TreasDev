@@ -2,7 +2,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from numba import njit
 # user input
 # make a check so user can only input integers
 print('Target Coordinates')
@@ -36,7 +35,6 @@ print('Veloticy = ', veli)
 #    k4 = h*f((x+h), (y+k3))
 #    y = y + (k1 + (2*k2) + (2*k3) + k4)/6
 #    return y
-@njit
 def xmotion(v, t):
     """
     :param v: initial velocity [m/s]
@@ -46,7 +44,6 @@ def xmotion(v, t):
     ux = np.round(v * t, 1)
     sx = np.round(ux * t, 1)
     return np.array([ux, sx])
-@njit
 def ymotion(v, t):
     """
     :param v: initial velocity [m/s]
@@ -56,7 +53,6 @@ def ymotion(v, t):
     uy = np.round(v * np.sin(theta) - g * t, 1)
     sy = np.round(uy * t, 1) + 1.8  # throw height of 1.7m
     return np.array([uy, sy])
-@njit
 def zmotion(v, t):
     """
     :param v: initial velocity [m/s]
