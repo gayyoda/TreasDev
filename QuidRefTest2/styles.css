@@ -1,0 +1,44 @@
+*{
+  background-color: yellow;
+  font-family: console;
+}
+#banner{
+  display: flex;
+}
+#logo-banner{
+  width: 100%;
+  margin-top: 0px;
+  height: 90px;
+}
+#name{
+  width: 100%;
+  text-align: center;
+  font: console;
+}
+#yes{
+  padding-top: 10px;
+  width: 50%;
+  float: left;
+}
+#no{
+  padding-top: 10px;
+  width: 50%;
+  float: right;
+}
+#but-yes{
+  width: 100%;
+  background-color: lime;
+}
+#but-no{
+  width: 100%;
+  background-color: red;
+}
+#player-div{
+  display: flex;
+}
+#player{
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}

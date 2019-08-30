@@ -1,0 +1,90 @@
+*{
+  font-family: monospace;
+}
+#banner{
+  width: 100%;
+  height: 80px;
+  margin-top: 20px;
+}
+#nav-bar{
+  width: 100%;
+  height: 20px;
+  background-color: #191BA9;
+  position: fixed;
+  text-align: center;
+}
+#nav-list{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.nav-link:link{
+  color: #5CC2F2;
+}
+.nav-link:visited{
+  color: #5CC2F2;
+}
+.nav-link:hover{
+  color: white;
+}
+footer{
+  background-color: #191BA9;
+  color: #5CC2F2;
+  text-align: center;
+  text-decoration: none;
+}
+#twit{
+  text-decoration: none;
+}
+#twit:link{
+  color:#5CC2F2;
+}
+#twit:visited{
+  color: #5CC2F2;
+}
+#twit:hover{
+  color: white;
+}
+/*index.html*/
+#container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25% 75%;
+}
+#FeatProj{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-rows-end: 3;
+  padding: 0px 10px 0px 20px;
+}
+#quick-lnk{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.qlnk:link{
+  text-decoration: none;
+}
+.qlnk:visited{
+  text-decoration: none;
+  color: black;
+}
+.qlnk:hover{
+  color: #191BA9;
+}
+#about{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 0px 10px 0px 10px;
+}
