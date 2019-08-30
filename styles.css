@@ -123,3 +123,7 @@ footer{
   margin: 0;
   padding: 0 100px 0 0;
 }
+/*contact.html*/
+#con-info{
+  text-align: center;
+}
