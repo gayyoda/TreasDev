@@ -53,7 +53,7 @@ footer{
   color: white;
 }
 /*index.html*/
-#container{
+#index-container{
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 25% 75%;
@@ -87,4 +87,39 @@ footer{
   grid-row-start: 2;
   grid-row-end: 3;
   padding: 0px 10px 0px 10px;
+}
+/*project.html*/
+#proj-container{
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: auto auto auto;
+}
+#projectile{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+#ref-test-1{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#chaser-form{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.proj-dis{
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.desc{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: left;
+  margin: 0;
+  padding: 0 100px 0 0;
 }
