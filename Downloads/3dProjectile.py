@@ -23,15 +23,12 @@ g = 9.8  # acceleration due to gravity [m/s^2]
 dt = 0.01  # timestep [s]
 theta = np.arctan(y_ui / z_ui)
 phi = np.arctan(y_ui / x_ui)
-
-
 # determine minimum velocity
 def vel(x, y, t, a, b):
     v = g * t * x / (y * (np.cos(a) - np.cos(b)) * t_ui)
     return v
 veli = vel(x_ui, y_ui, t_ui, theta, phi)
 print('Veloticy = ', veli)
-
 # def RK4(f, x, y, h):
 #    k1 = h*f(x,y)
 #    k2 = h*f(x+(h/2), (y+(k1/2)))
